@@ -1,5 +1,5 @@
 # calls-api-aimylogic
-example Calls API Aimylogic and Bitrix24
+Пример как можно делать звонки на определенном этапе сделки в Битрикс 24, используя Calls API Aimylogic.
 
 Нажмите на кнопку ниже, чтобы запустить свою копию этого приложения
 
@@ -23,3 +23,21 @@ git commit -am "some comments"
 git push
 ```
 ## Что необходимо настроить
+
+Укажите url вашего Вебхука Битрикс 24
+
+```
+var deal = request('GET', '<URL bitrix webhook>/crm.deal.get?id=' + dealId);
+var contact = request('GET', '<URL bitrix webhook>/crm.contact.get?id=' + userId);
+```
+Укажите ID этапа сделки Битрикс 24
+
+```
+deal.result.STAGE_ID == '<Your stageId>'
+```
+
+Укажите токен Calls API Aimylogic
+
+```
+'POST', 'https://app.aimylogic.com/api/calls/campaign/<token Calls API Aimylogic>/addPhones'
+```
