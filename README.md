@@ -30,7 +30,7 @@ git push
 var deal = request('GET', '<URL bitrix webhook>/crm.deal.get?id=' + dealId);
 var contact = request('GET', '<URL bitrix webhook>/crm.contact.get?id=' + userId);
 ```
-Укажите ID этапа сделки Битрикс 24
+Укажите ID этапа сделки Битрикс 24, на котором необходимо инициализировать звонок.
 
 ```
 deal.result.STAGE_ID == '<Your stageId>'
